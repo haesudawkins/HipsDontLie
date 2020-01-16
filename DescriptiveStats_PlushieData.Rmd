@@ -55,7 +55,7 @@ print (gor1)
 # But we need to tell R which file to import and where to find it. There are many ways to do this. We will use a second funtion, file.choose(), which will show you a pop-up window where you can navigate to the PlushieData.csv file on your computer (like in Finder).
 
 #For example, if I had a .csv file with data on primate bones that I wanted to import into R, I could type:
-bone.dat <- read.csv(file.choose())
+#bone.dat <- read.csv(file.choose())
 # Then I would press Enter and choose my .csv file from the pop-up window.
 
 # Your turn! Import the PlushieData.csv into R. Call this dataset plush.dat .
@@ -197,63 +197,87 @@ IQR(plush.dat$ThighLength)
 IQR(plush.dat$DistanceBetweenKnees)
 # 6.25
 
-# Variance: To calculate the variance of a variable, we use the function var() .
-
+# Variance: To calculate the variance of a variable, we use the function var() 
 # Calculate the variances for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
+var(plush.dat$Flexion)
+# 31.58333
 
+var(plush.dat$Extension)
+# 311.5833
 
+var(plush.dat$Adduction)
+# 6.25
 
+var(plush.dat$Abduction)
+# 2.25
 
+var(plush.dat$PelvicBreadth)
+# 0.25
 
+var(plush.dat$MidthighCircumference)
+# 0.08333333
 
+var(plush.dat$ThighLength)
+# 1.729167
 
-
-
-
-
-
-
-
-
+var(plush.dat$DistanceBetweenKnees)
+# 14.25
 
 
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
-
 # Calculate the SD for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
+sd(plush.dat$Flexion)
+# 5.619905
 
+sd(plush.dat$Extension)
+# 17.65172
 
+sd(plush.dat$Adduction)
+# 2.5
 
+sd(plush.dat$Abduction)
+# 1.5
 
+sd(plush.dat$PelvicBreadth)
+# 0.5
 
+sd(plush.dat$MidthighCircumference)
+# 0.2886751
 
+sd(plush.dat$ThighLength)
+# 1.314978
 
-
-
-
-
-
-
-
-
-
-
+sd(plush.dat$DistanceBetweenKnees)
+# 3.774917
 
 
 # Bonus:
 # Can you compile all the means for each variable into vectors?
+plush.dat <- read.csv(file.choose())
 
+flex_mean <- mean(plush.dat$Flexion)
+exte_mean <- mean(plush.dat$Extension)
+add_mean <- mean(plush.datAdduction)
+abd_mean <- mean(plush.dat$Abduction)
+pelvic_mean <- mean(plush.dat$PelvicBreadth)
+midthigh_mean <- mean(plush.dat$MidthighCircumference)
+thigh_mean <- mean(plush.dat$ThighLength)
+dis_mean <- mean(plush.dat$DistanceBetweenKnees)
 
-
-
-
-
-
+meanvectors <- c((flex_mean), (exte_mean), (add_mean), (abd_mean), (pelvic_mean), (midthigh_mean), (thigh_mean), (dis_mean))
 
 # Can you combine these mean vectors into a matrix? 
 
+meanmatrix <- matrix(meanvectors, nrow = 4, byrow = TRUE)
+print(meanmatrix)
 
 
 # Can you make vectors and matricies for the other statistics that we calculated above?
+
+
+
+
+
 
 

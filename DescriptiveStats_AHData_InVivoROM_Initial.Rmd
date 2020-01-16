@@ -1,3 +1,4 @@
+#Macaca
 ---
 title: "DescriptiveStats_PlushieData"
 output: html_document
@@ -47,12 +48,13 @@ bone.dat <- read.csv(file.choose())
 # Then I would press Enter and choose my .csv file from the pop-up window.
 
 # Your turn! Import the correct .csv into R using the code below. We're calling this dataset rom.dat. (*Ask me if you want to know why I included the "row.names = NULL" term.)
-rom.dat <- read.csv(file.choose(), row.names = NULL)
 
+rom.dat <- read.csv(file.choose(), row.names = NULL)
 
 # Print rom.dat into the Console below. You should now see your data in the Console, and see rom.dat in the Environment tab to the right. How many variables do you see?
 
-
+print(rom.dat)
+#7 variables
 
 # In the last few classes before break, we learned about various descriptive statistics (like mean and standard deviation). Please review your notes and ask questions to remind yourself what these statistics are!
 
@@ -61,16 +63,38 @@ rom.dat <- read.csv(file.choose(), row.names = NULL)
 
 # Calculate the means for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 # For example:
+
+
+mean(rom.dat$Extension)
+#149.9062
 mean(rom.dat$Flexion)
-# Answer: _ degrees
-
-
+# Answer: 30.3125 degrees
+mean(rom.dat$Abduction)
+#115.375
+mean(rom.dat$Adduction)
+#56.15625
+mean(rom.dat$ThighCircumference)
+#22.71875
+mean(rom.dat$ThighLength)
+#16.3125
 
 
 # Median: To calculate the median of a variable, we use the function median() .
 
 # Calculate the medians for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
+median(rom.dat$Extension)
+#150
+median(rom.dat$Flexion)
+# Answer: 30.3125 degrees
+median(rom.dat$Abduction)
+#114.5
+median(rom.dat$Adduction)
+#55
+median(rom.dat$ThighCircumference)
+#23
+median(rom.dat$ThighLength)
+#16.5
 
 
 # Range: To calculate the range of a variable, we have to do a little bit more work. We use the min() and max() functions to calculate the minimum and maximum values in the dataset. Then, we subtract the min from the max.
@@ -81,33 +105,89 @@ range.flex <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
 range.flex
 #Answer: _ degrees
 
+max(rom.dat$Extension)
+min(rom.dat$Extension)
+#36
 
+max(rom.dat$Flexion)
+min(rom.dat$Flexion)
+#30
+
+max(rom.dat$Abduction)
+min(rom.dat$Abduction)
+#27
+
+max(rom.dat$Adduction)
+min(rom.dat$Adduction)
+#43
+
+max(rom.dat$ThighCircumference)
+min(rom.dat$ThighCircumference)
+#15.5
+
+max(rom.dat$ThighLength)
+min(rom.dat$ThighLength)
+#12
 
 
 # Interquartile Range: To calculate the IQR of a variable, we use the function IQR() .
 
 # Calculate the IQR for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
-
+IQR(rom.dat$Extension)
+#12
+IQR(rom.dat$Flexion)
+#4.25
+IQR(rom.dat$Abduction)
+#7.5
+IQR(rom.dat$Adduction)
+#14
+IQR(rom.dat$ThighCircumference)
+#7.5
+IQR(rom.dat$ThighLength)
+#4
 
 # Variance: To calculate the variance of a variable, we use the function var() .
 
 # Calculate the variances for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
-
+var(rom.dat$Extension)
+#76.79738
+var(rom.dat$Flexion)
+#22.80242
+var(rom.dat$Abduction)
+#39.01613
+var(rom.dat$Adduction)
+#105.2974
+var(rom.dat$ThighCircumference)
+#18.07964
+var(rom.dat$ThighLength)
+#10.54435
 
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
 
 # Calculate the SD for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
 
+sd(rom.dat$Extension)
+#8.763411
+sd(rom.dat$Flexion)
+#4.775188
+sd(rom.dat$Abduction)
+#6.246289
+sd(rom.dat$Adduction)
+#10.26145
+sd(rom.dat$ThighCircumference)
+#4.252016
+sd(rom.dat$ThighLength)
+#3.247207
 
 # Now, compare your answers with those of the other person using the same dataset as you!
 
 
 # Bonus:
 # Can you compile all the means for each variable into vectors?
-
+#c() 
 
 
 # Can you combine these mean vectors into a matrix? 
