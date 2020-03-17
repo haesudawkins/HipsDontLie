@@ -31,6 +31,47 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 #Plot of primate Range Of Motion (ROM) and morphology data
 ```{r}
-var <- read.csv(file.choose())
+rom.dat <- read.csv(file.choose())
 ```
+
+```{r}
+morph.dat <- read.csv(file.choose())
+```
+#install.packages("car")
+#library(car)
+
+
+#q-q plot
+```{r}
+indexF <- which(rom.dat$Sex == "F")
+#flexionDat <- rom.dat$F[indexF]
+qqPlot(indexF)
+
+#qqPlot(rom.dat$Flexion)
+```
+
+
+#boxplot
+```{r}
+boxplot(Extension ~ Flexion, data = rom.dat, 
+        varwidth = TRUE, log = "y", las = 1)
+title("Range of motion: Extension vs. Flexion")
+
+boxplot(rom.dat)
+
+```
+#boxplot 2 
+```{r}
+boxplot(ThighLength ~ InternalRotation, data = rom.dat, 
+        varwidth = TRUE, log = "y", las = 1)
+title("Range of motion: Thigh Length, Flexion")
+
+```
+
+
+#scatterplot
+
+#scatterplot
+
+
 
