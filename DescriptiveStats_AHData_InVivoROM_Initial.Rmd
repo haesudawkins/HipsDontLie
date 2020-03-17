@@ -65,17 +65,18 @@ print(rom.dat)
 # For example:
 
 
-mean(rom.dat$Extension)
+
+mean.ex <- mean(rom.dat$Extension)
 #149.9062
-mean(rom.dat$Flexion)
+mean.fl <- mean(rom.dat$Flexion)
 # Answer: 30.3125 degrees
-mean(rom.dat$Abduction)
+mean.ab <- mean(rom.dat$Abduction)
 #115.375
-mean(rom.dat$Adduction)
+mean.ad <- mean(rom.dat$Adduction)
 #56.15625
-mean(rom.dat$ThighCircumference)
+mean.tc <- mean(rom.dat$ThighCircumference)
 #22.71875
-mean(rom.dat$ThighLength)
+mean.tl <- ean(rom.dat$ThighLength)
 #16.3125
 
 
@@ -83,17 +84,17 @@ mean(rom.dat$ThighLength)
 
 # Calculate the medians for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
-median(rom.dat$Extension)
+med.ex <- median(rom.dat$Extension)
 #150
-median(rom.dat$Flexion)
+med.fl <- median(rom.dat$Flexion)
 # Answer: 30.3125 degrees
-median(rom.dat$Abduction)
+med.ab <- median(rom.dat$Abduction)
 #114.5
-median(rom.dat$Adduction)
+med.ad <- median(rom.dat$Adduction)
 #55
-median(rom.dat$ThighCircumference)
+med.tc <- median(rom.dat$ThighCircumference)
 #23
-median(rom.dat$ThighLength)
+med.tl <- median(rom.dat$ThighLength)
 #16.5
 
 
@@ -188,12 +189,23 @@ sd(rom.dat$ThighLength)
 
 # Bonus:
 # Can you compile all the means for each variable into vectors?
-#c() 
+means <- c(149.9062, 30.3125, 115.375, 56.15625, 22.71875, 16.3125)
+
 =======
 # Together, work to compile the statistics (mean, median, etc.) of each variable (Extension, Flexion, etc.) into vectors. Then compile these vectors into matrices/dataframes/lists with labels. Your end goal is to have one variable that, when printed, shows you every statistic for every variable.
 
->>>>>>> 20531fd9ea7bb3acb22b3262aae4a533b758560b
 
+means <- c(mean.ex, mean.fl, mean.ab, mean.ad, mean.tc, mean.tl, mean.ib, mean.dbk, mean.eb, mean.ir, mean.er)
+
+medians <- c(med.ex, med.fl, med.ab, med.ad, med.tc, med.tl, med.ib, med.dbk, med.eb, med.ir, med.er)
+
+ranges <- c(sd.ex, sd.fl, sd.ab, sd.ad, sd.tc, sd.tl, sd.ib, sd.dbk, sd.eb, sd.ir, sd.er)
+
+iqrs <-
+
+vars <-
+
+sds <-
 
 
 # Bonus:
