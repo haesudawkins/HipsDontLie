@@ -70,8 +70,38 @@ title("Range of motion: Thigh Length, Flexion")
 
 
 #scatterplot
+```{r}
+scatterplot = plot(rom.dat$ThighLength, rom.dat$InternalRotation, data = rom.dat, linestyle='none')
+```
+
 
 #scatterplot
+
+
+#side by side
+
+```{r}
+par(mfrow = c(1, 2))
+plot(rom.dat$Extension, rom.dat$Flexion)
+title("Extension v Flexion")
+plot(rom.dat$Extension, rom.dat$Flexion, log = "y")
+title("Side by Side")
+```
+
+```{r}
+plot(rom.dat$ThighLength, rom.dat$Abduction, pch = 17, col = "blue")
+points(rom.dat$ThighLength, rom.dat$BiepicondylarBreadth, pch = 16, col = "green")
+abline(a=0, b = 1, lty = 2)
+         
+```
+
+
+
+
+
+
+
+
 
 
 
