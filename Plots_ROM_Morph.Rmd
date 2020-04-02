@@ -37,6 +37,11 @@ rom.dat <- read.csv(file.choose())
 ```{r}
 morph.dat <- read.csv(file.choose())
 ```
+
+```{r}
+finalrom.dat <- read.csv(file.choose())
+```
+
 #install.packages("car")
 #library(car)
 
@@ -94,6 +99,57 @@ points(rom.dat$ThighLength, rom.dat$BiepicondylarBreadth, pch = 16, col = "green
 abline(a=0, b = 1, lty = 2)
          
 ```
+
+
+#************
+
+#finalrom.dat graphs
+
+```{r}
+finalrom.dat <- read.csv(file.choose())
+```
+
+
+```{r}
+indexF <- which(finalrom.dat$Sex == "F")
+#flexionDat <- rom.dat$F[indexF]
+qqPlot(indexF)
+
+#qqPlot(rom.dat$Flexion)
+```
+
+```{r}
+boxplot(finalrom.dat$AS, finalrom.dat$AI, names = c("AS", "AI"), col = c("red"), pch = 0)
+```
+
+```{r}
+plot(finalrom.dat$Acetab_diameter, finalrom.dat$Pelvic_breadth, xlab = "Acetab_diameter", ylab = "Pelvic Breadth", col = c("lightblue"), main = "fun colorful and silly graph", pch = 8)
+```
+
+```{r}
+plot(finalrom.dat$Pelvic_breadth, finalrom.dat$Abduction, xlab = "Pelvic breadth", ylab = "Abduction", col = c("blue","blue"), title("Abduction over Pelvic breadth"))
+```
+
+```{r}
+install.packages("car")
+library(car)
+```
+
+```{r}
+qqPlot(finalrom.dat$Pelvic_breadth)
+```
+
+
+```{r}
+qqnorm(finalrom.dat$SUP, pch = 1, col = "red", frame = FALSE)
+qqline(finalrom.dat$ANT, pch = 1, col = "blue")
+```
+
+
+
+
+
+
 
 
 
