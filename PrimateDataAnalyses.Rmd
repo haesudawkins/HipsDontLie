@@ -39,21 +39,56 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # 1. Import the full primate dataset from GitHub (PrimateMorphROMData_Full.csv):
 ```{r}
-pri.dat <- 
+pri.dat <- read.csv(file.choose())
 ```
 
 
 # 2. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable in your dataset. Assign each mean and SD to a new variable!
 # Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
 ```{r}
-
+mean.femurhead <- sd(pri.dat$Femur_head, na.rm=TRUE)
+mean.NSA <- sd(pri.dat$NSA, na.rm=TRUE)
+mean.Neck <- sd(pri.dat$Neck, na.rm=TRUE)
+mean.L2 <- sd(pri.dat$L2, na.rm=TRUE)
+mean.L4 <- sd(pri.dat$L4, na.rm=TRUE)
+mean.FTA <- sd(pri.dat$FTA, na.rm=TRUE)
+mean.PS <- sd(pri.dat$PS, na.rm=TRUE)
+mean.PI <- sd(pri.dat$PI, na.rm=TRUE)
+mean.AS <- sd(pri.dat$AS, na.rm=TRUE)
+mean.AI <- sd(pri.dat$AI, na.rm=TRUE)
+mean.Total_Area <- sd(pri.dat$Total_Area, na.rm=TRUE)
+mean.SUP <- sd(pri.dat$SUPER, na.rm=TRUE)
+mean.ANT <- sd(pri.dat$ANT, na.rm=TRUE)
+mean.Acetab_diameter <- sd(pri.dat$Acetab_diameter, na.rm=TRUE)
+mean.Pelvic_breadth <- sd(pri.dat$Pelvic_breadth, na.rm=TRUE)
+mean.Abduction <- sd(pri.dat$Abduction, na.rm=TRUE)
+mean.Abduction_knee <- sd(pri.dat$Abduction_knee, na.rm=TRUE)
+  
+sd.femurhead <- sd(pri.dat$Femur_head, na.rm=TRUE)
+sd.NSA <- sd(pri.dat$NSA, na.rm=TRUE)
+sd.Neck <- sd(pri.dat$Neck, na.rm=TRUE)
+sd.L2 <- sd(pri.dat$L2, na.rm=TRUE)
+sd.L4 <- sd(pri.dat$L4, na.rm=TRUE)
+sd.FTA <- sd(pri.dat$FTA, na.rm=TRUE)
+sd.PS <- sd(pri.dat$PS, na.rm=TRUE)
+sd.PI <- sd(pri.dat$PI, na.rm=TRUE)
+sd.AS <- sd(pri.dat$AS, na.rm=TRUE)
+sd.AI <- sd(pri.dat$AI, na.rm=TRUE)
+sd.Total_Area <- sd(pri.dat$Total_Area, na.rm=TRUE)
+sd.SUP <- sd(pri.dat$SUPER, na.rm=TRUE)
+sd.ANT <- sd(pri.dat$ANT, na.rm=TRUE)
+sd.Acetab_diameter <- sd(pri.dat$Acetab_diameter, na.rm=TRUE)
+sd.Pelvic_breadth <- sd(pri.dat$Pelvic_breadth, na.rm=TRUE)
+sd.Abduction <- sd(pri.dat$Abduction, na.rm=TRUE)
+sd.Abduction_knee <- sd(pri.dat$Abduction_knee, na.rm=TRUE)
 ```
 
 
 # 3. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
 # Tip: Remember the square brackets? []
 ```{r}
-
+mean.Femur_headAlouatta <- mean(pri.dat$Femur_head[1:10])
+mean.Femur_headAlouatta
 ```
 
 
