@@ -177,7 +177,7 @@ summary(lmPelvicBreadth)
 
 # 3b. Which of your models show a significant relationship between the ROM (y) variable and the morphology (x) variable (p value in the x variable row is LESS THAN 0.05)?
 ```{r}
-#femur nsa fta sup acetab diameter 
+#femur nsa fta sup acetab diameter
 ```
 
 # 3c. Which of your models are strong models that adequately describe the relationship between the ROM (y) variable and the morphology (x) variable (adjusted R-squared is close to 1, which we will define as GREATER THAN 0.5)?
@@ -208,22 +208,45 @@ abline(lmFemurHead)
 
 # Your turn:
 
+plot(pri.dat$NSA, pri.dat$Abduction)
+abline(lmNSA)
+
+plot(pri.dat$Neck, pri.dat$Abduction)
+abline(lmNeck)
+
+plot(pri.dat$L2, pri.dat$Abduction)
+abline(lmL2)
+
+plot(pri.dat$L4, pri.dat$Abduction)
+abline(lmL4)
+
+plot(pri.dat$FTA, pri.dat$Abduction)
+abline(lmFTA)
+
+plot(pri.dat$PS, pri.dat$Abduction)
+abline(lmPS)
+
+plot(pri.dat$PI, pri.dat$Abduction)
+abline(lmPI)
+
+
 ```
 
 # 4b. From the scatterplots above, which of your models look like good fits (best-fit line follows the data well)?
 ```{r}
-
+#nsa, fta, sup
 ```
 
 
 # 5. Given all the information above, which morphology variables best predict (show the strongest linear relationship with) your ROM variable? Specify if these relationships are positive (positive slope, upward sloping line) or negative (negative slope, negative sloping line) relationships.
 ```{r}
-# the morp
+# nsa and fta are positive
+# sup is negative
 ```
 
 # 6. Are the morphology variables that best predict your ROM variable (from #5. above) the same or different from the morphology variabels that showed the strongest correlation to your ROM variable last week (#3. in the PrimateCorrelations.Rmd R Markdown)?
 ```{r}
-
+# I got nsa, fta, and sup that week, so yes, they are the same.
 ```
 
 
@@ -249,11 +272,15 @@ abline(lmFemurHead)
 ## WORKFLOW
 # 7. Use the lm() function to create a multiple linear regression model between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and the morphology variables that best predicted your ROM variable in the simple linear regression models (from #5. above). Make sure to name the model for future use.
 ```{r}
-
+#independent x = abduction
+#dependent y = NSA
+lmbonus <- lm (Abduction ~ NSA, data = pri.dat)
 ```
 
 # 8. Look at your multiple linear regression model from #7. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
 ```{r}
+
+summary(lmbonus)
 
 ```
 
